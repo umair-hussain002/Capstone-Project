@@ -21,20 +21,21 @@ import static io.restassured.RestAssured.given;
 public class TransferUITests {
     public WebDriver _driver;
     Properties prop = new Properties();
+
     @BeforeMethod
     public void setup() throws IOException {
-        FileInputStream fs= new FileInputStream("config.properties");
+        FileInputStream fs = new FileInputStream("config.properties");
         prop.load(fs);
         WebDriverManager.chromedriver().setup();
         _driver = new ChromeDriver();
         _driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         _driver.manage().window().maximize();
-        given().post(prop.getProperty("ParabankServiceURL")+"/initializeDB")
+        given().post(prop.getProperty("ParabankServiceURL") + "/initializeDB")
                 .then().statusCode(204);
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         _driver.close();
         _driver.quit();
     }
@@ -42,22 +43,24 @@ public class TransferUITests {
     @Test
     public void Transfer100Dollars() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
-        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")),prop.getProperty("ParabankHomePage"));
+        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("SmallAmount"), prop.getProperty("Account1"), prop.getProperty("Account2"));
-        Assert.assertEquals(Message,"Transfer Complete!");
+        Assert.assertEquals(Message, "Transfer Complete!");
     }
+
     @Test
-    public void Transfer500Dollars()  {
+    public void Transfer500Dollars() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
-        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")),prop.getProperty("ParabankHomePage"));
+        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("MediumAmount"), prop.getProperty("Account2"), prop.getProperty("Account3"));
-        Assert.assertEquals(Message,"Transfer Complete!");
+        Assert.assertEquals(Message, "Transfer Complete!");
     }
+
     @Test
     public void Transfer100000Dollars() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
-        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")),prop.getProperty("ParabankHomePage"));
+        paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("BigAmount"), prop.getProperty("Account1"), prop.getProperty("Account2"));
-        Assert.assertEquals(Message,"Transfer Complete!");
+        Assert.assertEquals(Message, "Transfer Complete!");
     }
 }

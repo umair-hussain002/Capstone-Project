@@ -19,7 +19,7 @@ public class TransferService {
                 .basic(credentials.username, credentials.password)
                 .queryParams(params)
                 .log().all()
-                .post(url+"/transfer");
+                .post(url + "/transfer");
         response.then().statusCode(200);
         return response.body().asString();
     }

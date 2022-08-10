@@ -55,8 +55,8 @@ public class TransferAPITests {
         TransferRequest transferRequest = new TransferRequest(prop.getProperty("Account1"),prop.getProperty("Account2"),prop.getProperty("BigAmount"));
         var response = transferService.Transfer(prop.getProperty("ParabankServiceURL"), credentials,transferRequest);
         String[] parts = response.split(" ");
-        Assert.assertEquals(parts[2],"$"+prop.getProperty("BigAmount"));
-        Assert.assertEquals(parts[5],"#"+prop.getProperty("Account1"));
+        Assert.assertEquals(parts[2], "$" + prop.getProperty("BigAmount"));
+        Assert.assertEquals(parts[5], "#" + prop.getProperty("Account1"));
         Assert.assertEquals(parts[8],"#"+prop.getProperty("Account2"));
     }
 }

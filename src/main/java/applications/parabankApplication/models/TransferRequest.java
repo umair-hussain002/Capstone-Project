@@ -5,7 +5,7 @@ public class TransferRequest {
     public String toAccountId;
     public String amount;
 
-    public TransferRequest(String fromAccountId, String toAccountId, String amount){
+    public TransferRequest(String fromAccountId, String toAccountId, String amount) {
         this.fromAccountId = fromAccountId;
         this.toAccountId = toAccountId;
         this.amount = amount;

@@ -11,6 +11,7 @@ public class ParaBankMain extends AbstractApplicationPage {
         loginPage = new LoginPage(driver);
         accountServices = new AccountService(driver);
     }
+
     public LoginPage loginPage;
     public AccountService accountServices;
 
