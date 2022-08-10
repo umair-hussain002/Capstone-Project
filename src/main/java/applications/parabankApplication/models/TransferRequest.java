@@ -1,4 +1,4 @@
-package parabank.pages.models;
+package applications.parabankApplication.models;
 
 public class TransferRequest {
     public String fromAccountId;

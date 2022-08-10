@@ -1,8 +1,8 @@
-package parabank.pages;
+package applications.parabankApplication.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import parabank.pages.models.Credentials;
+import applications.parabankApplication.models.Credentials;
 
 public class LoginPage extends AbstractApplicationPage {
     private By username = By.name("username");
