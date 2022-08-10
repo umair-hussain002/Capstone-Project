@@ -1,14 +1,14 @@
-package parabank.pages.webServices;
+package applications.parabankApplication.services.webServices;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import parabank.pages.models.Credentials;
-import parabank.pages.models.TransferRequest;
+import applications.parabankApplication.models.Credentials;
+import applications.parabankApplication.models.TransferRequest;
 
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class Transfers {
+public class TransferService {
 
     String baseURL = "https://parabank.parasoft.com/parabank/services/bank/";
     public ObjectMapper mapper = new ObjectMapper();
