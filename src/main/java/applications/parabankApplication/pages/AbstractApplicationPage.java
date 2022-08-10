@@ -7,14 +7,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 public abstract class AbstractApplicationPage {
     private WebDriver _driver;
-    public AbstractApplicationPage(WebDriver driver){
+    public AbstractApplicationPage(WebDriver driver) {
         this._driver = driver;
     }
+
     public void navigate(String url)
     {
         _driver.navigate().to(url);
