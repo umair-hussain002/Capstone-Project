@@ -1,4 +1,4 @@
-package testsuites.apiTests;
+package testsuites.apiTestsSuite;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -24,7 +24,7 @@ public class TransferAPITests {
     }
 
     @Test
-    public void Transfer100Dollars() {
+    public void Test1_Transfer100Dollars_fromApi() {
         TransferService transferService = new TransferService();
         Credentials credentials = new Credentials(prop.getProperty("UserName"), prop.getProperty("Password"));
         TransferRequest transferRequest = new TransferRequest(prop.getProperty("Account1"),prop.getProperty("Account2"),prop.getProperty("SmallAmount"));
@@ -37,7 +37,7 @@ public class TransferAPITests {
     }
 
     @Test
-    public void Transfer500Dollars()  {
+    public void Test2_Transfer500Dollars_fromApi()  {
         TransferService transferService = new TransferService();
         Credentials credentials = new Credentials(prop.getProperty("UserName"), prop.getProperty("Password"));
         TransferRequest transferRequest = new TransferRequest(prop.getProperty("Account2"),prop.getProperty("Account3"),prop.getProperty("MediumAmount"));
@@ -49,7 +49,7 @@ public class TransferAPITests {
     }
 
     @Test
-    public void Transfer100000Dollars() {
+    public void Test3_Transfer100000Dollars_fromApi() {
         TransferService transferService = new TransferService();
         Credentials credentials = new Credentials(prop.getProperty("UserName"), prop.getProperty("Password"));
         TransferRequest transferRequest = new TransferRequest(prop.getProperty("Account1"),prop.getProperty("Account2"),prop.getProperty("BigAmount"));

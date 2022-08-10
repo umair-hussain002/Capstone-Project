@@ -1,4 +1,4 @@
-package testsuites.uiTests;
+package testsuites.uiTestsSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,6 @@ import applications.ParaBankMain;
 import applications.parabankApplication.models.Credentials;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -41,7 +40,7 @@ public class TransferUITests {
     }
 
     @Test
-    public void Transfer100Dollars() {
+    public void Test1_Transfer100Dollars_fromUI() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
         paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("SmallAmount"), prop.getProperty("Account1"), prop.getProperty("Account2"));
@@ -49,7 +48,7 @@ public class TransferUITests {
     }
 
     @Test
-    public void Transfer500Dollars() {
+    public void Test2_Transfer500Dollars_fromUI() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
         paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("MediumAmount"), prop.getProperty("Account2"), prop.getProperty("Account3"));
@@ -57,7 +56,7 @@ public class TransferUITests {
     }
 
     @Test
-    public void Transfer100000Dollars() {
+    public void Test3_Transfer100000Dollars_fromUI() {
         ParaBankMain paraBank = new ParaBankMain(_driver);
         paraBank.loginPage.login(new Credentials(prop.getProperty("UserName"), prop.getProperty("Password")), prop.getProperty("ParabankHomePage"));
         String Message = paraBank.accountServices.TransferFundsAndGetMessage(prop.getProperty("BigAmount"), prop.getProperty("Account1"), prop.getProperty("Account2"));
