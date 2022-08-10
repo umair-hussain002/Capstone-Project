@@ -1,8 +1,8 @@
-package parabank.pages.webServices;
+package Applications.ParabankApplicaiton.Services.WebServices;
 
+import Applications.ParabankApplicaiton.Models.Credentials;
+import Applications.ParabankApplicaiton.Models.TransferRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import parabank.pages.models.Credentials;
-import parabank.pages.models.TransferRequest;
 
 import java.util.Map;
 

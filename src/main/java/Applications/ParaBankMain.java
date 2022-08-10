@@ -1,9 +1,9 @@
-package parabank.pages.applications;
+package Applications;
 
 import org.openqa.selenium.WebDriver;
-import parabank.pages.AbstractApplicationPage;
-import parabank.pages.AccountServices;
-import parabank.pages.LoginPage;
+import Applications.ParabankApplicaiton.Pages.AbstractApplicationPage;
+import Applications.ParabankApplicaiton.Services.AccountServices;
+import Applications.ParabankApplicaiton.Pages.LoginPage;
 
 public class ParaBankMain extends AbstractApplicationPage {
     public ParaBankMain(WebDriver driver) {
